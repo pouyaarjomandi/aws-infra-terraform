@@ -96,6 +96,12 @@ variable "node_max_size" {
   default     = 4
 }
 
+variable "node_disk_size" {
+  description = "Disk size in GB for each EKS worker node"
+  type        = number
+  default     = 20
+}
+
 # ──────────────────────────────────────────────
 # Monitoring and access secrets
 # ──────────────────────────────────────────────
