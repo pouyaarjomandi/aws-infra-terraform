@@ -30,8 +30,8 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags = merge(local.common_tags, {
-    Name                        = "${var.project_name}-${var.environment}-public-${var.azs[count.index]}"
-    "kubernetes.io/role/elb"    = "1"
+    Name                     = "${var.project_name}-${var.environment}-public-${var.azs[count.index]}"
+    "kubernetes.io/role/elb" = "1"
   })
 }
 resource "aws_subnet" "private" {
