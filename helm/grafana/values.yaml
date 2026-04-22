@@ -1,0 +1,31 @@
+grafana:
+  adminUser: admin
+
+  resources:
+    requests:
+      cpu: "250m"
+      memory: "256Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+
+  persistence:
+    enabled: true
+    storageClassName: "gp3"
+    size: "10Gi"
+
+  service:
+    type: ClusterIP
+    port: 80
+
+  dashboards:
+    default:
+      node-exporter:
+        gnetId: 1860
+        revision: 33
+        datasource: Prometheus
+
+      kubernetes-cluster:
+        gnetId: 3119
+        revision: 2
+        datasource: Prometheus
