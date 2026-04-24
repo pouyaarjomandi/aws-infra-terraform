@@ -1,0 +1,32 @@
+# Copy this file to terraform.tfvars and adjust values for your environment
+# cp terraform.tfvars.example terraform.tfvars
+
+project_name = "myapp"
+# environment is derived from the active Terraform workspace (dev, staging, prod).
+# Override it here only if you want a name that differs from the workspace:
+# environment = "dev"
+aws_region   = "us-east-1"
+
+# Restrict the EKS public API endpoint to your current public IP or office/VPN CIDR
+# Example: eks_public_access_cidrs = ["203.0.113.10/32"]
+# eks_public_access_cidrs = ["203.0.113.10/32"]
+
+# EKS control plane logging retention in CloudWatch Logs
+# eks_control_plane_log_retention_in_days = 30
+
+# Pin monitoring chart upgrades explicitly
+# kube_prometheus_stack_chart_version = "83.4.0"
+
+# Optional monitoring overrides
+# grafana_admin_password     = "set-a-strong-password-if-you-do-not-want-auto-generation"
+# alerting_slack_webhook_url = "https://hooks.slack.com/services/..."
+# alerting_slack_channel     = "#monitoring-alerts"
+# alerting_slack_critical_channel = "#critical-alerts"
+
+# RDS
+db_name           = "appdb"
+db_username       = "dbadmin"
+# db_password      = "set-a-strong-password-if-you-do-not-want-auto-generation"
+db_instance_class = "db.t3.medium"
+db_engine_version = "16.13"
+multi_az          = true
